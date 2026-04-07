@@ -1,0 +1,489 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+   font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: absolute; /* ⬅️ penting */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10; /* ⬅️ penting banget */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+
+  background: rgba(0, 0, 0, 0.3); /* ⬅️ transparan gelap */
+  backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* LOGO */
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #6ac9e6;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* NAV */
+nav a {
+  margin-left: 20px;
+  color: rgba(255, 255, 255,0.7);
+  text-decoration: none;
+  transition: 0.3s;
+}
+/* warna fitur */
+nav a:hover,
+nav a.active {
+  color: #6ac9e6;
+}
+
+/* ================= HERO ================= */
+
+.hero::before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    transparent
+  );
+}
+/* hero beranda */
+.hero {
+  backdrop-filter: blur(2px);
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('gambar/BlogImage.jpg') center/cover no-repeat;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+   z-index: 2;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  color: #ffffff;
+  text-shadow: 0 5px 20px rgba(0,0,0,0.7);
+  font-family: 'Playfair Display', serif;
+}
+
+.hero p {
+  margin: 15px 0;
+  color: #dddddd;
+}
+
+/* HERO HALAMAN LAYANAN */
+.hero-layanan {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
+    url('gambar/48215_840x576.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: space-between;    
+  align-items: center;
+
+  padding: 0 80px;
+}
+
+.hero-layanan::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+/* TEXT */
+.hero-text {
+  max-width: 500px;
+}
+
+/* JUDUL BESAR */
+.hero-text h1 {
+  font-size: 150px; /* ⬅️ gede banget */
+  font-weight: 700;
+  color: #00c6ff; /* warna utama */
+
+  /* efek bayangan tebal */
+  text-shadow: 
+    2px 2px 8px rgba(0,0,0,0.5); /* ⬅️ lebih halus */
+
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+/* DESKRIPSI */
+.hero-text p {
+  font-size: 18px;
+  color: #ddd;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+position: relative;
+  z-index: 2;
+}
+
+/* CARD */
+.info-card {
+  background: rgba(255, 255, 255, 0.1); /* ⬅️ transparan */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-left: 4px solid #00c6ff;
+  padding: 35px 45px;
+  border-radius: 18px;
+  width: 320px;
+
+  color: #fff;
+  font-weight: 500;
+
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+  transition: 0.3s;
+   position: relative;
+}
+
+.info-card:hover {
+  transform: translateX(-10px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.info-card p {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: #e0f7ff;
+}
+
+.info-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  width: 5px;
+  height: 60%;
+  background: linear-gradient(#00c6ff, #0072ff);
+  border-radius: 10px;
+}
+
+/* HOVER */
+.info-card:hover {
+  transform: translateX(-10px) scale(1.05);
+}
+
+/* BUTTON */
+.btn {
+ background: linear-gradient(45deg, #00c6ff, #0072ff);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #6ac9e6;
+  color: #0f2027;
+  box-shadow: 0 0 15px #00c6ff;
+  transform: scale(1.05)
+  
+}
+
+/* ================= HARGA SECTION ================= */
+.harga-section {
+  background: linear-gradient(to bottom, #8fb3d9, #cfd8e3);
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.h1 {
+  color: #00e0ff;
+}
+ .container {
+  
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 0; /* opsional, biar nggak kelihatan kotak */
+
+  background: #ffffff; /* putih full */
+  
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  border: none;
+  box-shadow: none;
+}
+/* GRID */
+.harga-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* CARD KECIL */
+.harga-card {
+ background: rgba(212, 241, 245, 0.9);
+  padding: 20px;
+  border-radius: 16px;
+  width: 160px;
+  transition: 0.4s;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.harga-card:hover {
+  transform: translateY(-10px) scale(1.07);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.harga-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(0, 198, 255, 0.3), transparent);
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.harga-card:hover::before {
+  opacity: 1;
+}
+
+
+/* BOX BESAR */
+.info-box {
+  background: rgba(190, 247, 237, 0.9);
+  padding: 25px;
+  border-radius: 16px;
+  margin: 20px auto;
+  max-width: 600px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.info-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.layanan-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  animation: fadeIn 1s ease;
+}
+
+.service-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  min-height: 100vh;
+  padding: 100px 20px;
+  text-align: center;
+
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+.contact h2 {
+   font-size: 42px;
+  color: #00c6ff;
+}
+
+.contact-desc {
+  margin-top: 10px;
+  color: #cfd8dc;
+}
+
+
+/* CARD CONTACT */
+.contact-box {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  background: #706964;
+  width: 220px;
+  padding: 30px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #eee;
+  transition: 0.4s;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
+}
+
+.contact-item {
+  width: 200px;
+  padding: 30px 20px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  text-decoration: none;
+  color: #fff;
+
+  transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+
+.contact-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ================= MAP ================= */
+.map-wrapper {
+  margin-top: 60px;
+}
+
+.map-wrapper h3 {
+  margin-bottom: 20px;
+  color: #00c6ff;
+}
+
+/* MAP BOX */
+.map-container {
+  width: 90%;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.map-container iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+}
+
+
+
+/* ================= SCROLL ================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f140c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00c6ff, #0072ff);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00e0ff, #0090ff);
+}
+
+/* ICON */
+.contact-item span {
+  font-size: 38px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* TEXT */
+.contact-item h3 {
+  color: #00c6ff;
+  margin-bottom: 5px;
+}
+
+.contact-item p {
+  font-size: 14px;
+  color: #cfd8dc;
+}
+
+/* ================= ANIMATION ================= */
+.fade {
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width: 768px) {
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background: #111;
+    padding: 20px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
